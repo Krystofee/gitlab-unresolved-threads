@@ -1,2 +1,2 @@
 # gitlab-unresolved-threads
-Chrome extension to show unresolved threads on merge request list.
+Chrome extension to show unresolved threads on gitlab merge request list.
