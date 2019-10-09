@@ -12,7 +12,11 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["jquery.min.js", "enhance-merge-requests.js"]
+      "js": [
+        "jquery.min.js",
+        "enhance-merge-requests.js",
+        "ignore-whitespaces.js"
+      ]
     }
   ],
   "permissions": ["https://gitlab.com/*"]
