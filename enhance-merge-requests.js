@@ -1,5 +1,7 @@
 if (
-  /^https:\/\/gitlab.com\/\w+\/\w+\/merge_requests$/.test(window.location.href)
+  /^https:\/\/gitlab\.com\/(\w+\/\w+|dashboard)\/merge_requests\/?(\?.*)?$/.test(
+    window.location.href
+  )
 ) {
   function createThreadsBadge(element, color, resolved, resolvable) {
     const li = $("<li/>")
