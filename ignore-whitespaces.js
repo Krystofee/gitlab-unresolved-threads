@@ -24,5 +24,4 @@ function doIt() {
 }
 
 doIt();
-
 setInterval(doIt, 200);
