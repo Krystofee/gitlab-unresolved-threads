@@ -15,6 +15,7 @@
       "js": [
         "jquery.min.js",
         "enhance-merge-requests.js",
+        "merge-request-checklist.js",
         "ignore-whitespaces.js"
       ]
     }
