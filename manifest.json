@@ -13,7 +13,7 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "jquery.min.js",
+        "jquery-3.4.1.min.js",
         "enhance-merge-requests.js",
         "merge-request-checklist.js",
         "ignore-whitespaces.js"
