@@ -1,27 +1,16 @@
-var isRefreshing = false;
-
-function doIt() {
-  if (
-    !isRefreshing &&
-    /^https:\/\/gitlab\.com.*\/diffs/.test(window.location.href) &&
-    !/\?.*w=1/.test(window.location.href)
-  ) {
-    var str = "";
-    if (/\?(.+=.*&)*$/.test(window.location.href)) {
-      str = "";
-    } else if (/\?(.+=.*&)*.+=.*[^&]$/.test(window.location.href)) {
-      str = "&";
-    } else {
-      str = "?";
-    }
-
-    window.location = window.location.toString() + str + "w=1";
-    isRefreshing = true;
-    setTimeout(function() {
-      isRefreshing = false;
-    }, 2000);
+if (
+  /^https:\/\/gitlab\.com/.test(window.location.href) &&
+  !/^https:\/\/gitlab\.com\/users\/sign_in/.test(window.location.href) &&
+  !/\?.*w=1/.test(window.location.href)
+) {
+  var str = "";
+  if (/\?(.+=.*&)*$/.test(window.location.href)) {
+    str = "";
+  } else if (/\?(.+=.*&)*.+=.*[^&]$/.test(window.location.href)) {
+    str = "&";
+  } else {
+    str = "?";
   }
-}
 
-doIt();
-setInterval(doIt, 200);
+  window.location = window.location.toString() + str + "w=1";
+}
