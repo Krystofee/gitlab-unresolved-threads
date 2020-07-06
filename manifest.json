@@ -1,6 +1,6 @@
 {
   "name": "Gitlab unresolved threads",
-  "version": "0.4",
+  "version": "0.5.3",
   "manifest_version": 2,
   "description": "Chrome extension to show unresolved threads on merge request list.",
   "homepage_url": "https://github.com/Krystofee/gitlab-unresolved-threads",
