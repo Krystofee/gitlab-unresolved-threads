@@ -1,0 +1,35 @@
+body {
+    width: 200px;
+    margin: 0;
+}
+
+.popup {
+    background-color: #f5f5f5;
+}
+
+.popup__title {
+    background-color: indianred;
+    color: white;
+}
+
+.popup__input {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.popup__input-text {
+    text-align: center;
+    display: flex;
+}
+
+.popup__margins {
+    margin: 8px;
+}
+
+label {
+    margin: 0;
+    vertical-align: center;
+    align-self: center;
+    font-weight: bold;
+}

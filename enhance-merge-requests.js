@@ -3,7 +3,30 @@ if (
     window.location.href
   )
 ) {
+  let isSmall = false;
+  let completedColor = "#8fc7a6";
+  let incompleteColor = "#ffd3d3";
+
+  chrome.storage.local.get('isSmall', function (result) {
+    isSmall = result.isSmall
+  });
+
+  // Get current isSmall value.
+  chrome.storage.local.get('completedColor', function (result) {
+    completedColor = result.completedColor || '#8fc7a6';
+  });
+
+  // Get current isSmall value.
+  chrome.storage.local.get('incompletedColor', function (result) {
+    incompleteColor = result.incompletedColor || '#ffd3d3';
+  });
+
   function createThreadsBadge(element, color, resolved, resolvable) {
+    let badgeLabel = `${resolved}/${resolvable}`;
+    if (!isSmall) {
+       badgeLabel += ` threads resolved`;
+    }
+
     const li = $("<li/>")
       .addClass("issuable-comments d-none d-sm-flex")
       .prependTo(element);
@@ -11,7 +34,7 @@ if (
       .addClass("badge color-label")
       .css("background-color", color)
       .css("color", "#333333")
-      .text(`${resolved}/${resolvable} threads resolved`)
+      .text(badgeLabel)
       .prependTo(li);
   }
 
@@ -30,9 +53,9 @@ if (
         });
 
         if (resolvable > resolved) {
-          createThreadsBadge(metaList, "#ffd3d3", resolved, resolvable);
+          createThreadsBadge(metaList, incompleteColor, resolved, resolvable);
         } else if (resolved === resolvable && resolvable > 0) {
-          createThreadsBadge(metaList, "#8fc7a6", resolved, resolvable);
+          createThreadsBadge(metaList, completedColor, resolved, resolvable);
         }
       }
     });
