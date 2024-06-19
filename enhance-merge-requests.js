@@ -17,7 +17,7 @@ if (
 
   $(".merge-request").each(function() {
     const anchor = $(this).find(".merge-request-title-text a")[0];
-    const metaList = $(this).find(".issuable-meta ul")[0];
+    const metaList = $(this).find(".issuable-meta ul, ul.controls")[0];
 
     $.ajax({
       url: `${anchor.href}/discussions.json`,
